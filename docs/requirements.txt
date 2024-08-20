@@ -8,3 +8,4 @@ mne
 pandas
 boxsdk
 python-dotenv
+readthedocs-sphinx-ext
