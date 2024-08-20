@@ -136,4 +136,4 @@ def run_csv_conversion(app):
 def setup(app: Sphinx):
     logging.basicConfig(level=logging.INFO)
     #app.connect("builder-inited", run_box_script)
-    app.connect("builder-inited", run_csv_conversion)
+    #app.connect("builder-inited", run_csv_conversion)
