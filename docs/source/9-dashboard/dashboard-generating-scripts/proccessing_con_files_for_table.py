@@ -20,10 +20,13 @@ def process_con_file(file_path):
     print(f"Processing file: {file_path}")
     print(f"Data shape: {data.shape}")
     # Calculate average and variance across all channels
-    avg = np.mean(data)
+    avg = (np.mean(data)) * 1e15
     var = np.var(data)
 
     return avg, var
+
+
+# for negative values: tried looking at the channels of the files that give negative  values found some of them provide negative values
 
 
 def process_all_con_files(base_folder):
