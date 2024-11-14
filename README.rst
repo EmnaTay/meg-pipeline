@@ -20,6 +20,11 @@ This web-interface offers a *simple* and *intuitive* overview on how MEG machine
 
 If you like to get a PDF document of this website, click here : `Download PDF <https://meg-pipeline.readthedocs.io/_/downloads/en/latest/pdf/>`_
 
+Download the latest lab documentation and lab manual from `Release v-report-docs <https://github.com/Hzaatiti/meg-pipeline/releases/tag/v-report-docs/>`_
+
+- `MEG Lab documentation PDF download <https://github.com/Hzaatiti/meg-pipeline/releases/download/v-report-docs/meg-lab-documentation.pdf>`_
+- `MEG Lab manual PDF download <https://github.com/Hzaatiti/meg-pipeline/releases/download/v-report-docs/meg-lab-manual.pdf>`_
+
 `Development Board Project CLICK HERE <https://github.com/users/hzaatiti-NYU/projects/1>`_
 If you are not a part of the project, the above link will not work, please request access to the project if needed.
 

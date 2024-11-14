@@ -1,0 +1,9 @@
+Timestamp,Status,System Name
+2024-08-01,Active,OPM Main System
+2024-08-01,Inactive,OPM Power Supply
+2024-08-01,Active,OPM Data Logger
+2024-08-01,Inactive,OPM Backup Unit
+2024-08-08,Inactive,OPM Main System
+2024-08-08,Active,OPM Power Supply
+2024-08-08,Active,OPM Data Logger
+2024-08-08,Inactive,OPM Backup

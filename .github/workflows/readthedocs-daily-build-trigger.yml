@@ -1,0 +1,21 @@
+name: ReadTheDocs Daily Build Trigger
+
+# Scheduled daily build to update the dashboards with the new empty-room data
+
+on:
+  schedule:
+   - cron: '0 6 * * *'  # This triggers the action daily at 6 AM UTC (10 AM UAE time)
+  workflow_dispatch:  # Allows manual triggering via GitHub Actions UI
+
+jobs:
+  trigger-readthedocs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Daily Trigger ReadTheDocs Build
+        run: |
+          curl -X POST "https://readthedocs.org/api/v3/projects/meg-pipeline/versions/latest/builds/" \
+          -H "Authorization: Token ${{ secrets.READTHEDOCS_API_TOKEN }}"

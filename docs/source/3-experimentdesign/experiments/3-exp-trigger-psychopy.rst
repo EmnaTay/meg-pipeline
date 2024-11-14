@@ -7,5 +7,5 @@ The following script triggers each event channel on the KIT from 224 to 231 usin
 
 `trigger_test_psychopy.py <https://github.com/hzaatiti-NYU/meg-pipeline/blob/main/experiments/psychopy/trigger_test_psychopy.py>`_.
 
-.. literalinclude:: ../../../../experiments/psychopy/trigger_test_psychopy.py
+.. literalinclude:: ../../../../experiments/psychopy/general/trigger_test_psychopy.py
   :language: python

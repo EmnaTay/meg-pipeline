@@ -1,0 +1,11 @@
+python -m pip install --upgrade --no-cache-dir pip setuptools
+python -m pip install --upgrade --no-cache-dir sphinx
+python -m pip install --exists-action=w --no-cache-dir -r docs/requirements.txt
+python -m pip install --upgrade --upgrade-strategy only-if-needed --no-cache-dir .
+pip install pandoc
+cd docs/source
+winget install --source winget --exact --id JohnMacFarlane.Pandoc
+python -m sphinx -T -W --keep-going -b html -d ../../rtd-build-output/_build/doctrees -D language=en . ../../rtd-build-output/html
+python -m sphinx -T -b latex -d ../../rtd-build-output/_build/doctrees -D language=en . ../../rtd-build-output/pdf
+cd ../../rtd-build-output/pdf/
+latexmk -r latexmkrc -pdf -f -dvi- -ps- -jobname=meg-pipeline -interaction=nonstopmode

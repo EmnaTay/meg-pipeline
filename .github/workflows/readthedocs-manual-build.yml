@@ -1,0 +1,16 @@
+name: ReadTheDocs Manual Build Trigger
+
+# Triggers the ReadTheDocs build manually
+
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger-readthedocs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Manual Trigger ReadTheDocs Build
+        run: |
+          curl -X POST "https://readthedocs.org/api/v3/projects/meg-pipeline/versions/latest/builds/" \
+          -H "Authorization: Token ${{ secrets.READTHEDOCS_API_TOKEN }}"

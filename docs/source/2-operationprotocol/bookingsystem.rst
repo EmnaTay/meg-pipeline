@@ -1,5 +1,3 @@
-
-
 Identifying your usage
 ----------------------
 
@@ -9,11 +7,14 @@ Identifying your usage
 Booking system and scheduling
 -----------------------------
 
-While scheduling your experiment, avoid rush hours 8:30am and 5:30pm
-
- rush hour has alot of noise avoid experiments during this time
 
 
+.. warning::
+
+   While scheduling your experiment, avoid rush hours 8:30am and 5:30pm
+   rush hour has alot of noise avoid experiments during this time
+   All bookings should not happen on a monday morning, as Helium refill is scheduled for monday mornings
+   and it is not possible to acquire data during this period.
 
 .. important::
 

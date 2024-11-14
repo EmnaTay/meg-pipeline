@@ -1,3 +1,5 @@
+.. _design_experiment:
+
 Implementing your experiment
 ============================
 
@@ -24,7 +26,7 @@ There are three tools primarily used for designing the experiment used in NYUAD 
 - Psychopy: an open source Python library with both GUI based design and code based design
 
 
-Definning the hardware needs for your experiment
+Defining the hardware needs for your experiment
 ------------------------------------------------
 
 Depending on your study you might need different require different hardware, the following use cases can be identified:
@@ -66,6 +68,14 @@ If using python library PsychoPy:
 
 
 
+Pixel mode experiments
+----------------------
+
+All experiments that uses the Vpixx pixel mode should follow these rules:
+
+- Once the experiment script is run, the experiment should land on an `Introduction page` that requires a button press to be able to continue by the project owner (the participant should not be able to continue through this page)
+- Prior to landing on the `Introduction page` within your script, you should deactivate the Vpixx Pixel Mode, otherwise there could be false trigger events in the data recording
+
 
 "Presentation" based experiments
 --------------------------------
@@ -73,3 +83,5 @@ If using python library PsychoPy:
 Experiments coded in "Presentation" do not enable the Vpixx pixel mode by default.
 If your experiment uses Pixel Mode (i.e., you are using the color of the top left pixel of the screen as a condition to send triggers), you must run the `enablepixelmode.m` script.
 Find the script under  `experiments/psychtoolbox/general/enablepixelmode.m <https://github.com/hzaatiti-NYU/meg-pipeline/blob/main/experiments/psychtoolbox/general/enablepixelmode.m>`_
+
+

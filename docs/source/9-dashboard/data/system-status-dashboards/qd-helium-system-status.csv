@@ -1,0 +1,9 @@
+Timestamp,Status,System Name
+2024-08-01,Active,QD Helium Main
+2024-08-01,Inactive,QD Helium Backup
+2024-08-01,Active,QD Helium Sensor A
+2024-08-01,Inactive,QD Helium Sensor B
+2024-08-08,Inactive,QD Helium Main
+2024-08-08,Inactive,QD Helium Backup
+2024-08-08,Active,QD Helium Sensor A
+2024-08-08,Active,QD Helium Sensor

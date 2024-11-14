@@ -1,6 +1,6 @@
 screens = Screen('Screens');
 
-s = max(screens);
+s = ;
 
 
 [w, rect] = Screen('Openwindow',s,black)

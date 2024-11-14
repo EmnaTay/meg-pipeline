@@ -1,1 +1,1 @@
-screens = Screen('Screens');
+s = Screen('Screens');

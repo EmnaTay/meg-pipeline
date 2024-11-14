@@ -1,21 +1,24 @@
 %% This script should send a trigger to each MEG channel, with a 1 second delay between each trigger
 
-clearvars
-Screen('Preference', 'SkipSyncTests', 1);
-AssertOpenGL;  
+clearvars; clc
+%Screen('Preference', 'SkipSyncTests', 1);
+%AssertOpenGL;  
 
 
 % Configuration parameters
-
+ 
 vpix_use = 1; % 0 if vpixx is not conected
 trigger_test = 1; 
 % if 0, trigger is 1 pixel, 
 % if 1 trigger is bigger (to be able to see it)
 
 % SCREEN SETUP
+PsychDebugWindowConfiguration(0, 1); % 1 for running exp; 0.5 for debugging
+PsychDefaultSetup(2);
 s = Screen('Screens');
+s = max(Screen('Screens'));
+%s = max(s);
 
-s = max(s);
 
 %Colors definition in RGB
 black = [0 0 0];
@@ -67,19 +70,29 @@ fields = fieldnames(trig); % Get the field names of the structure
 
 time2trigger = 5;
 
-
+escKey = KbName('ESCAPE');  % Define the ESC key
 
 times = 3;
 for j = 1:times
 
     for i = 1:numel(fields)
+
+
+        % Check for key press
+        [keyIsDown, ~, keyCode] = KbCheck;
+        if keyIsDown && keyCode(escKey)
+            disp('ESC key pressed. Exiting...');
+            break;  % Exit the inner loop
+        end
+
+
         fieldName = fields{i}; % Get the field name
         fieldValue = trig.(fieldName); % Get the value of the field
     
         fprintf('%s: [%d %d %d]\n', fieldName, fieldValue); % Print the field name and value
         
         message = ['One trigger every ', int2str(time2trigger),' seconds.' ...
-            'Channel name getting triggered now: ', fieldName];
+            'Channel name getting triggered now: ', fieldName, 'Press Escape to cancel'];
         Screen('DrawText', w, message,  wx-250, wy, [255,255,255]);
         
         Screen('FillRect', w, fieldValue, trigRect);

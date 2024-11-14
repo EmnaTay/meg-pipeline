@@ -1,5 +1,9 @@
+.. _resting_state_exp:
+
 Experiments example 1 (Psychtoolbox): Resting state
 ---------------------------------------------------
+
+
 
 - Resting state experiment: Using PsychToolBox the following script executes a resting state experiment.
 
@@ -8,5 +12,15 @@ Two triggers are sent from the 'Datapixx3' to the KIT-MEG on channels 224 (closi
 The code for the experiment can be found here: Source file link
 `resting_state_meg.m <https://github.com/hzaatiti-NYU/meg-pipeline/blob/main/experiments/psychtoolbox/general/resting_state_meg.m>`_.
 
-.. literalinclude:: ../../../../experiments/psychtoolbox/general/resting_state_meg.m
-  :language: matlab
+.. dropdown:: Resting state task code
+
+    .. literalinclude:: ../../../../experiments/psychtoolbox/general/resting_state_meg.m
+      :language: matlab
+
+
+Analysis results
+^^^^^^^^^^^^^^^^
+
+The notebook provides analysis results after running the experiment on a participant (Sub-01).
+
+`Link to my notebook <../../5-pipeline/notebooks/mne/resting_state_pipeline.ipynb>`_
