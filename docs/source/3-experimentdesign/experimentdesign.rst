@@ -85,3 +85,16 @@ If your experiment uses Pixel Mode (i.e., you are using the color of the top lef
 Find the script under  `experiments/psychtoolbox/general/enablepixelmode.m <https://github.com/hzaatiti-NYU/meg-pipeline/blob/main/experiments/psychtoolbox/general/enablepixelmode.m>`_
 
 
+KIT experiment length
+---------------------
+
+The maximum length of a KIT `.con` file recording can be 4000 seconds = 66 minutes, this is the maximum total length of the recording.
+Therefore, the design of your experiment that requires more then this time, should be performed in blocks each of maximum total duration of ideally 55 minutes (to have a safety time margin).
+When the recording reaches the final length, a new recording must start (this is described in the KIT operational protocol).
+
+
+KIT system testing triggers
+---------------------------
+
+If you are in the testing phase of your experiment and would like to test the triggers, you can do so without locking the sensors.
+Simply open `MEG160` and then `Acquire -> MEG Measurement`, then run your experiment from the stimulus computer and observe channels 224 -> 231 to check for trigger signals.

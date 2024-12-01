@@ -9,7 +9,8 @@ on:
 jobs:
   build-docs:
     runs-on: ubuntu-22.04
-
+    permissions:
+      contents: write  # Required for managing releases
     env:
       BOX_CLIENT_ID: ${{ secrets.BOX_CLIENT_ID }}
       BOX_CLIENT_SECRET: ${{ secrets.BOX_CLIENT_SECRET }}
@@ -65,7 +66,7 @@ jobs:
           mv rtd-build-output/pdf/meg-pipeline.pdf rtd-build-output/pdf/meg-lab-manual.pdf
 
       - name: Create or Update GitHub Release and Upload PDF
-        if: ${{ success() }}
+        if: ${{ success() && (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && github.event.pull_request.merged == true) }}
         uses: softprops/action-gh-release@v1
         with:
           files: rtd-build-output/pdf/meg-lab-manual.pdf

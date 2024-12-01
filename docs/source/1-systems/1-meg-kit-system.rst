@@ -299,8 +299,8 @@ The following is a list of references for further understanding on MEG systems
     * https://docs.google.com/document/d/1OrVP9ts1gTGB5fhzx8YcK3JKZQgm0HM4Ic3hKtVzHzA/edit?usp=sharing
     * https://docs.google.com/document/d/1X9Tj28ekJ93TubJ52TnrebDvIh8zeXHLp2aMURNV40Y/edit?usp=sharing
 
-
 * Books:
     * Hansen, Peter & Kringelbach, Morten & Salmelin, Riitta. (2010). MEG: An introduction to methods. 10.1093/acprof:oso/9780195307238.001.0001.
     * Knösche, Thomas & Haueisen, Jens. (2022). EEG/MEG Source Reconstruction, Textbook for Electro-and Magnetoencephalography. 10.1007/978-3-030-74918-7.
     * Hari, MD, PhD, Riitta, and Aina Puce, PhD, MEG-EEG Primer, 1 (New York, 2017; online edn, Oxford Academic, 1 Mar. 2017), accessed 18 July 2024.
+    * Tobimatsu, Shozo, and Ryusuke Kakigi, eds. Clinical applications of magnetoencephalography. No. 8564. Springer Japan, 2016.

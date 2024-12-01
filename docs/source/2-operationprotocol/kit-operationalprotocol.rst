@@ -216,7 +216,13 @@ Prepare the lab equipment (prior to participant arrival) Estimated Time: 20min
         - Make sure you arrive to the `Introduction Page` mentioned in the :ref:`design_experiment` section
     - You can make a quick test run to make sure that trigger signals are appearing correctly on the `MEG160` software
 
-#. Turn-off the bell ring at the entrance of the lab by turning off the plug [IMAGE]
+#. Turn-off the doorbell ring at the entrance of the lab by turning off the plug [IMAGE]
+
+.. figure:: figures/meg-operationprotocol/doorbell.png
+    :alt: Doorbell
+    :align: center
+
+    Deactivate the doorbell by pressing the plug button.
 
 Perform the MEG Experiment (Participant is present)
 ---------------------------------------------------
@@ -267,13 +273,28 @@ Perform the MEG Experiment (Participant is present)
         - Cochlear implant or hearing aid
         - Make-up, especially red color makeup
         - Hair pins
-        - Jewelry
+        - Jewelry and piercings
         - Keys
         - Phone
     - If the subject arrives with make-up, ask him/her to completely remove it
+    - If the subject wears glasses, ask them to remove the glasses and provide them with an MR compatible glasses from the briefcase found in the lab
+        - Determine their vision prescription and provide them with the closest matching pair of glasses from the briefcase.
+
+        .. figure:: figures/meg-operationprotocol/glasses_case.png
+            :alt: Glasses briefcase
+            :align: center
+
+            MR safe glasses briefcase.
+
     - Ask the participant to put their phone on Airplane mode
     - Put your own phone and all other phones in the MEG lab on airplane mode
     - Call the security guard on `85849` and ask them to turn off their walkie-talkies for the duration of the experiment
+
+    .. figure:: figures/meg-operationprotocol/phone.png
+        :alt: Phone
+        :align: center
+
+        Phone in MEG lab with a label of security guard office.
 
 #. Perform the FastScan laser head scan
     - Capping the participant
@@ -282,6 +303,7 @@ Perform the MEG Experiment (Participant is present)
         - People with long hair, can keep most part of their hair outside the cap behind their ears and onto the back
         - The ears must be clear of hair
         - The cap must cover all the hair that can be seen at the anterior, left and right parts of the head
+        - Smoothen the hair under the cap as much as possible, excess long hair can be drawn to outside the cap at the cerebellum level
         - The goal is that the cap takes the shape of the skull at best
     - Mark the fiducials
         - Use the “T” template, with the line aligning the participant’s nasion as in the below picture
@@ -318,12 +340,44 @@ Perform the MEG Experiment (Participant is present)
             - Open `FastScan II` software on the computer
             - Press 'New'
             - Ensure the scanner is in Sweep mode (add [IMAGE])
-            - Point the laser gun at the stationary point (the box on the ring you place around the neck, [IMAGE]) with a half-click, followed by a full click.
+            - Point the laser gun at the `laser scanner reference point` (the box on the ring you place around the neck, see below) with a half-click, followed by a full click.
+
+            .. figure:: figures/meg-operationprotocol/reference_point.png
+                :alt: Reference point
+                :align: center
+
+                Laser scanner reference point.
+
+            .. figure:: figures/meg-operationprotocol/neck_brace.png
+                :alt: Neck brace with tissue for sanitary purposes
+                :align: center
+
+                Neckbrace with laser scanner reference point on the bottom left.
+
+            .. warning::
+
+                ** Error message during scanning **
+                If the following error message appear, this means that the laser scan device lost the reference point.
+
+                .. figure:: figures/meg-operationprotocol/error_laser_scanner.png
+                    :alt: Neck brace with tissue for sanitary purposes
+                    :align: center
+
+                    LaserScan error when device is dereferenced.
+
+                In such situation, do not press the `Cancel` on the message, but point the laser scanner to the reference point with a half click first to point at it then a full click.
+
             - Scan head shape (sweeps) with full click. Tips:
                 - All cap surface + surfaces with fiducial points
                 - Avoid overlapping sweeps
                 - Making sweeps for head and face separately.
                 - Keep a consistent distance between the head and scanner.
+
+                .. hint::
+
+                    Press half a click while using the laser scanner to shift the view on the `FastScan II` software to the current view as seen from the device.
+                    This feature allows you to quickly identify areas that are not covered well by the current laser scan.
+
         - After sweeps, switch to Laser Points and click on Stylus List for points options, ensure that Stylus > Properties > Capture Points (NOT capture lines)
             - Close the flap down on the laser gun and start registering the fiducial points following this order - see picture.
             - Nasion - between eye-brows (not marked)
@@ -345,13 +399,15 @@ Perform the MEG Experiment (Participant is present)
 
         FastScan divide MUST be always like this: laser on foam, cables on table (not floor).
 
-    - Put off the neck brace and make subject stand up
-        - Save as (this is the .fsn files)
-        - Create folder: FastScan Files/<Lab_Name>/<Study CODE>/sub_<subjectID>/ sess_<session_number>
-        - [e.g. sub_12/sess_01]
-        - Filename: sub-<subjectID>-sess-<session_number>_<data in yyyymmdd>_raw
-        - Export as basic surface   (check)
-        - Save the file and press `Yes` to export stylus points aswell
+    - Remove the cap from the participant's head and toss into the washing bin
+    - Put off the neck brace and make participant stand up
+    - Save as (this is the .fsn files)
+    - Create folder: FastScan Files/<Lab_Name>/<Study CODE>/sub_<subjectID>/ sess_<session_number>
+    - [e.g. sub_12/sess_01]
+    - Filename: `sub-<subjectID>-sess-<session_number>_<data in yyyymmdd>_raw.fsn`
+    - Export as basic surface   (check)
+    - Save the file as `sub-<subjectID>_basicsurface.txt`
+    - Press `Yes` to export stylus points aswell name the file as `sub-<subjectID>_laserpoints.txt`
 
 
 #. Marker Box check
@@ -365,6 +421,7 @@ Perform the MEG Experiment (Participant is present)
 
     - When the marker box is switched on with the power button, there is a light on for a brief moment. If there is no light, batteries run out of energy and should be changed (see below picture of rechargeable battery device).
         - The marker box requires 4 rechargeable AA batteries
+        - The recharged batteries are available below the `Eye-tracker computer`
 
         .. figure:: figures/meg-operationprotocol/batteries.png
             :alt: Batteries
@@ -433,12 +490,15 @@ Perform the MEG Experiment (Participant is present)
 
             Continuous mode (left) and Marker measurement (right).
 
+        - A `.mrk` file named as `YYYYMMDD-x.mrk` is automatically generated in the specified directory following the marker measurement, where `x` is an integer 1,2,3,... indicating the order of recording of the marker
         - If your experiment is lengthy i.e. 2 hours long, we recommend that you perform a marker measurement in between, i.e., after 1 hour is elapsed
     - On “Monitor and Acquisition” window:
         - Continuous Mode > Start - see above picture
         - Sampling rate: 1000 (default)
         - Time: 4000 [66 minutes] (this is the maximum possible time in the MEG160 software)
         - Start Acquisition
+        - You can now safely start your experiment from the `Stimulus computer`
+    - If your experiment is lengthy i.e. 2 hours long, we recommend that you perform a marker measurement in between, i.e., after 1 hour is elapsed
     - [While end-of-task text is prompted] Perform marker measurement again as in the step above
     - Main task - block 1 (see points 8-10)
         - Start recording
@@ -513,6 +573,11 @@ After the MEG session
     - Refer to the uploading data section to upload your data
 
 
+Perspectives for KIT Operational Protocol
+-----------------------------------------
+
+- Automate the `Noise Reduction` filter for multi-subjects in `MEG160`
+- Automatic savings of the `.con` files was enabled before but is no longer the case, it would be ideal to go back to automatic saving
 
 
 Appendix. A: Stylus location and markers

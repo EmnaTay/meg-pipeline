@@ -1,5 +1,5 @@
 Experiment example 8: Using Photodiode
-----------------------------------------------
+--------------------------------------
 
 In this experiment, a photodiode is used to estimate the lag in time between a trigger signal sent from the Vpixx system to
 the KIT DAQ computers. With experiments that requires milliseconds precision with a lag time below 5 ms, it is ideal to use a photodiode to correct

@@ -1,10 +1,18 @@
+% % Define conditions and image indices
+% side = [-1 1];
+% preview = [0 1];
+% questionType = [0 1];
+% crowding = [1 2];
+% connection = [0 1 ];
+% imageIndex = 1:13;
+
 % Define conditions and image indices
 side = [-1 1];
 preview = [0 1];
 questionType = [0 1];
-crowding = [1 2];
-connection = [0 1 ];
-imageIndex = 1:13;
+crowding = [1 2 3];
+connection = [0 1 2 3];
+imageIndex = 1:25;
 
 % Calculate the total number of images
 numConnections = length(connection);

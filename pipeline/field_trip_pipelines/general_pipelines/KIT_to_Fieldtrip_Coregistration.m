@@ -108,7 +108,7 @@ mrk1 = ft_convert_units(mrk1, lasershape.unit);
 mrk2 = ft_read_headshape(mrkfile2);
 mrk2 = ft_convert_units(mrk2, lasershape.unit);
 
-
+%% 
 % Define the average marker positions, mrk1 correspond to HPI coils at the
 % beginning and end of the experiment
 mrka = mrk1;
@@ -117,23 +117,62 @@ mrka.fid.pos = (mrk1.fid.pos+mrk2.fid.pos)/2;
 
 % p1 holds all the marker points 
 p_coils = mrka.fid.pos(1:5,:);
+p_coils2 = mrka.fid.pos(1:3,:);
 p_headscan = lasershape.fid.pos;
 
+x = p_headscan(:, 1);
+y = p_headscan(:, 2);
+z = p_headscan(:, 3);
+
+x_p_coils = p_coils(:, 1);
+y_p_coils = p_coils(:, 2);
+z_p_coils = p_coils(:, 3);
+
+
+% Create a 3D scatter plot
+scatter3(x, y, z, 'filled');
+hold on
+scatter3(x_p_coils,y_p_coils,z_p_coils, 'filled')
+
+
+%% 
 t1 = ft_headcoordinates(p_coils(1,:), p_coils(2,:), p_coils(3,:), 'ctf');%J
 t2 = ft_headcoordinates(p_headscan(6,:), p_headscan(4,:), p_headscan(5,:), 'ctf');%J
-% t1 = ft_headcoordinates(p1(1,:), p1(2,:), p1(3,:), 'ctf');
-% t2 = ft_headcoordinates(p2(1,:), p2(4,:), p2(5,:), 'ctf');
 
+
+%Mapping from .mrk HPI Coils to the Stylus head point
+
+% Blue coil is Number X in the .mrk which correspond to Y in the stylus
+% points
+% Yellow coil
+% White coil
+% Black coil
+% Red coil
 
 % t2\t1 is interpreted as the transformation t that, if you apply t to a
 % point, then you apply t1 on the resulting point, becomes as if you
 % applied t2 on that point, this means the composition t1(t(point)) = t2
 
-transform_mrk2laser = t2\t1;
+transform_mrk2laser = t2\t1; % from sensor to headshape / from sensor to laser
 % p1t = ft_warp_apply(transform_mrk2laser, p1)
 
 grad = ft_read_sens(confile,'senstype','meg');
-grad = ft_transform_geometry(transform_mrk2laser, grad);
+grad= ft_transform_geometry(transform_mrk2laser, grad);
+
+transform_mrk2laser = transform_mrk2laser(1:3,:);
+TR = transform_mrk2laser(:,1:3);
+TT = transform_mrk2laser(:,4);
+
+transformed_coords = TR*p_coils' + TT;
+%%
+[TR2, TT2]= icp(p_coils', p_headscan');
+%%
+figure
+scatter3(transformed_coords(1,:), transformed_coords(2,:),transformed_coords(3,:), 'filled')
+hold on
+scatter3(x, y, z, 'filled');
+scatter3(x_p_coils,y_p_coils,z_p_coils, 'filled')
+
 
 save data/grad grad
 

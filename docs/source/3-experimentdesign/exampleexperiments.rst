@@ -11,6 +11,7 @@ Example Experiments MEG
    experiments/6-exp-sound
    experiments/7-attention-experiment
    experiments/8-photodiode
+   experiments/9-auditory-vs-visual
 
 
 
@@ -29,3 +30,4 @@ MEG Lab demonstrations
 .. nbgallery::
 
    demonstration/1-meg-class-demo
+   demonstration/2-meg-biopsychology-class-tour

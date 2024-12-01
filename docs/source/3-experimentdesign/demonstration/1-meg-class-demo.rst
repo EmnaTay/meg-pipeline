@@ -45,12 +45,4 @@ Agenda 105min total
         - NA
         - NA
 
-Notes: MEG DEMO:
 
-Let us reduce the preparation of the 20min
-
-Attention experiment analysis:
-
--	Compute alpha power first then average on trials
--	Button box not really needed as triggers
--	Contra-lateral effect, with attention should see less alpha power
